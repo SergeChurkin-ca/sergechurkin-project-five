@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/sergechurkin-project-five/static/css/main.78b9946a.chunk.css",
-    "main.js": "/sergechurkin-project-five/static/js/main.de1f4c50.chunk.js",
-    "main.js.map": "/sergechurkin-project-five/static/js/main.de1f4c50.chunk.js.map",
-    "runtime-main.js": "/sergechurkin-project-five/static/js/runtime-main.2885d1f4.js",
-    "runtime-main.js.map": "/sergechurkin-project-five/static/js/runtime-main.2885d1f4.js.map",
-    "static/js/2.2bc149f8.chunk.js": "/sergechurkin-project-five/static/js/2.2bc149f8.chunk.js",
-    "static/js/2.2bc149f8.chunk.js.map": "/sergechurkin-project-five/static/js/2.2bc149f8.chunk.js.map",
-    "index.html": "/sergechurkin-project-five/index.html",
-    "precache-manifest.d44ebb1dd4c493a54ef488de9a83eb1c.js": "/sergechurkin-project-five/precache-manifest.d44ebb1dd4c493a54ef488de9a83eb1c.js",
-    "service-worker.js": "/sergechurkin-project-five/service-worker.js",
-    "static/css/main.78b9946a.chunk.css.map": "/sergechurkin-project-five/static/css/main.78b9946a.chunk.css.map",
-    "static/js/2.2bc149f8.chunk.js.LICENSE.txt": "/sergechurkin-project-five/static/js/2.2bc149f8.chunk.js.LICENSE.txt"
+    "main.css": "/sergechurkin-projectFive/static/css/main.2d06486d.chunk.css",
+    "main.js": "/sergechurkin-projectFive/static/js/main.a2e567da.chunk.js",
+    "main.js.map": "/sergechurkin-projectFive/static/js/main.a2e567da.chunk.js.map",
+    "runtime-main.js": "/sergechurkin-projectFive/static/js/runtime-main.c24d28ab.js",
+    "runtime-main.js.map": "/sergechurkin-projectFive/static/js/runtime-main.c24d28ab.js.map",
+    "static/js/2.9befb50b.chunk.js": "/sergechurkin-projectFive/static/js/2.9befb50b.chunk.js",
+    "static/js/2.9befb50b.chunk.js.map": "/sergechurkin-projectFive/static/js/2.9befb50b.chunk.js.map",
+    "index.html": "/sergechurkin-projectFive/index.html",
+    "precache-manifest.92f1418b9cc8f6e5f8f511624d004228.js": "/sergechurkin-projectFive/precache-manifest.92f1418b9cc8f6e5f8f511624d004228.js",
+    "service-worker.js": "/sergechurkin-projectFive/service-worker.js",
+    "static/css/main.2d06486d.chunk.css.map": "/sergechurkin-projectFive/static/css/main.2d06486d.chunk.css.map",
+    "static/js/2.9befb50b.chunk.js.LICENSE.txt": "/sergechurkin-projectFive/static/js/2.9befb50b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2885d1f4.js",
-    "static/js/2.2bc149f8.chunk.js",
-    "static/css/main.78b9946a.chunk.css",
-    "static/js/main.de1f4c50.chunk.js"
+    "static/js/runtime-main.c24d28ab.js",
+    "static/js/2.9befb50b.chunk.js",
+    "static/css/main.2d06486d.chunk.css",
+    "static/js/main.a2e567da.chunk.js"
   ]
 }
