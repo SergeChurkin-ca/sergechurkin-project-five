@@ -57,8 +57,8 @@ class App extends Component {
       });
     });
   }
-  // **************************
 
+  // **********REMOVING ADN ADDING TOURS****************
   handleRemoveTour = (id) => {
     this.database.child(id).remove();
   };
