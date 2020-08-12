@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./firebase";
-
+import Noteform from "./NoteForm/NoteForm";
 import "./App.css";
 
 const Header = (props) => {
@@ -8,28 +8,12 @@ const Header = (props) => {
     <header>
       <h1> {props.title} </h1>
       <span className="stats"> Total tours: {props.totalTours} </span>
+      <ul>
+        <li>Tour Name</li>
+        <li>Date</li>
+        <li>Seats available</li>
+      </ul>
     </header>
-  );
-};
-
-// LISTING THE TOUR WITH DETAILS
-// const Tour = (props) => {
-//   return (
-//     <div className="player">
-//       <span className="name">{props.name}</span>
-//       <span className="date"> {props.date} </span>
-//       <span className="seats"> {props.seats} </span>
-//       <Dates />
-//       <Counter />
-//     </div>
-//   );
-// };
-
-const Dates = (props) => {
-  return (
-    <div className="date">
-      <span className="date"> {props.date} </span>
-    </div>
   );
 };
 
@@ -125,11 +109,10 @@ class App extends Component {
                 <button onClick={() => this.handleRemoveTour(toursObject.id)}>
                   X
                 </button>
+                {toursObject.name}
               </li>
-              <li>{toursObject.name}</li>
-              <li>{toursObject.date}</li>
+              <li> {toursObject.date} </li>
               <li>{toursObject.seats}</li>
-              {/* {toursObject.id} */}
             </ul>
           );
         })}
@@ -137,5 +120,5 @@ class App extends Component {
     );
   }
 }
-// ReactDOM.render(<App />, document.getElementById("root"));
+
 export default App;

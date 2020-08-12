@@ -13,14 +13,17 @@ div .tourlist {
     text-align: center;
 }
 
-header {
+header,
+header li {
     color: #FFF;
     padding: 5px 10px;
     text-align: center;
-    display: flex;
+    display: block;
     align-items: center;
     background-color: #8063FA;
     border-bottom: solid 2px #D4CAFF;
+    text-align: left;
+    margin: 1em;
 }
 
 header h1 {
@@ -28,6 +31,7 @@ header h1 {
     font-size: 1.5em;
     letter-spacing: 2px;
     font-weight: normal;
+    text-align: center;
 }
 
 
@@ -38,65 +42,10 @@ form {
     background-color: #8063FA;
 }
 
-input[type=text] {
-    flex-grow: 1;
-    border-width: 0 0 1px 0;
-    margin: 15px 10px 15px 15px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #5B45B9;
-    border-style: none;
-    text-shadow: none;
-    text-transform: uppercase;
-    color: #C7BCF8;
-    letter-spacing: 2px;
-    outline: none;
-}
-
-input[type=text]::-webkit-input-placeholder {
-    color: #C7BCF8;
-    letter-spacing: 2px;
-}
-
-input[type=text]:focus {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-input[type=submit] {
-    display: block;
-    font-size: .6em;
-    margin: 15px 15px 15px 0;
-    padding: 10px;
-    background-color: #44338D;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: bold;
-    text-shadow: none;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
 button,
 input[type=submit] {
     outline: none;
     transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-
-/* ICONS */
-
-.is-high-score {
-    fill: #FFC657;
-    animation: grow 0.35s ease-in-out;
-    transform-origin: 50% 50%;
-}
-
-@keyframes grow {
-    50% {
-        transform: scale(1.4) rotate(-3deg);
-    }
 }
 
 
@@ -111,7 +60,6 @@ input[type=submit] {
     overflow: hidden;
 }
 
-.player,
 .date {
     display: flex;
     font-size: 1.2em;
@@ -119,16 +67,7 @@ input[type=submit] {
     letter-spacing: 2px;
 }
 
-.player:last-of-type {
-    border-bottom-color: #D4CAFF;
-}
-
-.tour-list:hover .remove-player {
-    visibility: visible;
-}
-
 .tour-list,
-.counter-score,
 .date,
 .seats {
     color: #2F2366;
@@ -148,37 +87,9 @@ input[type=submit] {
     margin-right: 0.8em;
 }
 
-.remove-player {
-    font-size: 1.15em;
-    border: none;
-    outline: none;
-    visibility: hidden;
-    color: #EF5350;
-    cursor: pointer;
-    margin: 0 10px 0 0;
-    padding: 0;
-    background: none;
-}
-
-.stats,
-.stopwatch {
-    width: 170px;
-}
-
 .stats {
     margin: 0 0 0 28px;
     font-weight: normal;
-}
-
-.stats td:first-child {
-    text-align: right;
-    font-weight: normal;
-    letter-spacing: 2px;
-    font-size: .7em;
-}
-
-.stats td:last-child {
-    text-align: left;
 }
 
 .stopwatch button:hover,
@@ -188,70 +99,22 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
-.stopwatch h2 {
-    font-size: .6em;
-    margin: 0;
-    font-weight: normal;
-    letter-spacing: 2px;
+
+/* ********* LIST *************** */
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+    width: 95%;
 }
-
-.counter {
-    display: flex;
-    width: 190px;
-}
-
-.counter-action {
-    border: none;
-    font-size: 1.15em;
-    font-weight: bold;
-    color: #B0AEBA;
-    background-color: #DCDCDC;
-    display: block;
-    padding: 20px 20px;
-    cursor: pointer;
-    outline: none;
-}
-
-.counter-action:hover {
-    color: #fff;
-}
-
-.increment:hover {
-    background: #83D97C;
-}
-
-.decrement:hover {
-    background: #EF5350;
-}
-
-.counter-score {
-    flex-grow: 1;
-    text-align: center;
-    font-family: monospace;
-    font-size: 2em;
-    line-height: 2em;
-}
-
-
-/* ************************************ */
 
 li {
-    display: inline-flex;
-    width: calc((100% / 3) - 1em);
-    padding: 1em 2em 2em;
     text-align: left;
-    height: 3em;
-    vertical-align: top;
+    padding: 1em 2em;
     background-color: rgb(241, 239, 239);
-}
-
-li:nth-child(1) {
-    width: 3em;
-    /* padding: 1em; */
-}
-
-li:nth-child(4) {
-    width: 3em;
+    list-style: none;
 }
 
 button {
