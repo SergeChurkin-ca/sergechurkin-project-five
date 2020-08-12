@@ -7,6 +7,7 @@ class NewTourForm extends Component {
     this.state = {
       newTourName: "",
       newTourDate: "",
+      newTourDuration: "",
       newTourSeats: "",
     };
   }
@@ -23,6 +24,11 @@ class NewTourForm extends Component {
       newTourDate: e.target.value,
     });
   };
+  handleTourDuration = (e) => {
+    this.setState({
+      newTourDuration: e.target.value,
+    });
+  };
 
   handleTourSeats = (e) => {
     this.setState({
@@ -33,19 +39,25 @@ class NewTourForm extends Component {
   writeNote = () => {
     // call a method that sets the noteContent for a note to
     // the value of the input
-    this.props.addTour(this.state.newTourName, this.state.newTourDate);
+    this.props.addTour(
+      this.state.newTourName,
+      this.state.newTourDate,
+      this.state.newTourDuration,
+      this.state.newTourSeats
+    );
 
     // Set newTourName back t≤o an empty string.
     this.setState({
       newTourName: "",
       newTourDate: "",
+      newTourDuration: "",
       newTourSeats: "",
     });
   };
 
   render() {
     return (
-      <div className="formWrapper">
+      <div className="inputformWrapper">
         <input
           type="text"
           className="noteInput"
@@ -53,21 +65,31 @@ class NewTourForm extends Component {
           value={this.state.newTourName}
           onChange={this.handleUserInput}
         />
-        <input
-          type="date"
-          className="dateInput"
-          value={this.state.newTourDate}
-          onChange={this.handleDateInput}
-        />
-        <input
-          type="number"
-          className="dateInput"
-          value={this.state.newTourSeats}
-          onChange={this.handleTourSeats}
-        />
-        <button className="noteButton" onClick={this.writeNote}>
-          Add
-        </button>
+        <div className="inputParamsWrapper">
+          <input
+            type="date"
+            className="dateInput"
+            value={this.state.newTourDate}
+            onChange={this.handleDateInput}
+          />
+          <input
+            type="datetime"
+            className="dateInput"
+            placeholder="hrs"
+            value={this.state.newTourDuration}
+            onChange={this.handleTourDuration}
+          />
+          <input
+            type="number"
+            className="dateInput"
+            placeholder="pax"
+            value={this.state.newTourSeats}
+            onChange={this.handleTourSeats}
+          />
+          <button className="noteButton" onClick={this.writeNote}>
+            Add
+          </button>
+        </div>
       </div>
     );
   }

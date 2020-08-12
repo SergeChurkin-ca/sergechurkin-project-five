@@ -10,7 +10,9 @@ const Header = (props) => {
       <span className="stats"> Total tours: {props.totalTours} </span>
       <ul>
         <li> Tour Name </li>
-        <li> Date </li> <li> Seats Total </li>
+        <li> Date </li>
+        <li> Duration </li>
+        <li> Seats Total </li>
       </ul>
     </header>
   );
@@ -43,6 +45,7 @@ class App extends Component {
           name: data[inventoryName].name,
           seats: data[inventoryName].seats,
           date: data[inventoryName].date,
+          duration: data[inventoryName].duration,
         };
         newToursAarray.push(toursObject);
       }
@@ -60,9 +63,19 @@ class App extends Component {
     this.database.child(id).remove();
   };
 
-  addTour = (toursObjectName, toursObjectDate) => {
+  addTour = (
+    toursObjectName,
+    toursObjectDate,
+    toursObjectDuration,
+    toursObjectSeats
+  ) => {
     // console.log(toursObject);
-    this.database.push().set({ name: toursObjectName, date: toursObjectDate });
+    this.database.push().set({
+      name: toursObjectName,
+      date: toursObjectDate,
+      duration: toursObjectDuration,
+      seats: toursObjectSeats,
+    });
   };
 
   render() {
@@ -71,14 +84,16 @@ class App extends Component {
         <Header title="Tour Inventory" totalTours={this.state.tours.length} />
         {this.state.tours.map((toursObject) => {
           return (
-            <ul key={toursObject.id}>
+            <ul className="inventoryItem" key={toursObject.id}>
               <li>
                 <button onClick={() => this.handleRemoveTour(toursObject.id)}>
                   X
                 </button>
                 {toursObject.name}
               </li>
-              <li> {toursObject.date} </li> <li> {toursObject.seats} </li>
+              <li>{toursObject.date}</li>
+              <li>{toursObject.duration} hrs</li>
+              <li>{toursObject.seats}</li>
             </ul>
           );
         })}

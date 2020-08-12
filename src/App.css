@@ -1,17 +1,12 @@
 @import url('setup.css');
-
-/* ELEMENT STYLES -------------------- */
-
 body {
     background: #e8e7e7;
     font-family: arial;
     text-transform: uppercase;
 }
 
-div .tourlist {
-    margin: 0 auto;
-    text-align: center;
-}
+
+/* ********* HEADER *************** */
 
 header,
 header li {
@@ -34,17 +29,34 @@ header h1 {
     text-align: center;
 }
 
-
-/* FORMS */
-
-form {
-    display: flex;
-    background-color: #8063FA;
+div .tourlist {
+    margin: 0 auto;
+    text-align: center;
 }
 
-input {
+
+/* ********* FORMS *************** */
+
+.formWrapper {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding: 1em;
+}
+
+.noteInput {
     line-height: 1.5em;
-    margin: 0.5em;
+    padding: 0.5em;
+    margin: 1em;
+    width: 90%;
+    padding: 1em;
+}
+
+.dateInput {
+    width: calc((100% / 4) - 1em);
+    margin: 1em;
+    padding: 1em;
 }
 
 button,
@@ -54,28 +66,15 @@ input[type=submit] {
 }
 
 
-/* COMPONENT STYLES -------------------- */
+/* ********* COMPONENT STYLES *************** */
 
 .tourlist {
     background: #fff;
-    width: 90%;
-    margin: 70px auto;
+    width: 80%;
+    margin: 0 auto;
     box-shadow: 0 2px 0 rgb(133, 104, 250);
     border-radius: 6px;
-    overflow: hidden;
-}
-
-.date {
-    display: flex;
-    font-size: 1.2em;
-    border-bottom: solid 2px #EEEEEE;
-    letter-spacing: 2px;
-}
-
-.tour-list,
-.date,
-.seats {
-    color: #2F2366;
+    /* overflow: hidden; */
 }
 
 .name {
@@ -108,10 +107,11 @@ input[type=submit]:hover {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 5px;
-    /* width: 95%; */
+    width: 95%;
+    padding: 1em;
 }
 
 li {
@@ -121,7 +121,21 @@ li {
     list-style: none;
 }
 
+.inventoryItem:nth-child(1n+2):hover li {
+    background-color: rgb(193, 228, 240);
+}
+
+.inventoryItem {
+    margin: 0 auto;
+    width: 96%;
+}
+
 button {
     border: 0;
     color: red;
+    background-color: rgb(241, 239, 239, 0);
+}
+
+button:hover {
+    transform: scale(1.2);
 }
