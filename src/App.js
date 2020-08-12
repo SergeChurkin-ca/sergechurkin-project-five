@@ -60,11 +60,11 @@ class App extends Component {
   handleRemoveTour = (id) => {
     console.log(id);
 
-    this.database.logchild(id).remove();
+    this.database.child(id).remove();
   };
 
   addTour = (toursObject) => {
-    this.database.push().set({ noteContent: toursObject });
+    this.database.push().set({ name: toursObject });
   };
 
   render() {
