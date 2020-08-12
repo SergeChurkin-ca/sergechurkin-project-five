@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./firebase";
-import NoteForm from "./NoteForm/NoteForm";
+import NoteForm from "./NoteForm/NewTourForm.jsx";
 import "./App.css";
 
 const Header = (props) => {
@@ -9,9 +9,8 @@ const Header = (props) => {
       <h1> {props.title} </h1>
       <span className="stats"> Total tours: {props.totalTours} </span>
       <ul>
-        <li>Tour Name</li>
-        <li>Date</li>
-        <li>Seats Total</li>
+        <li> Tour Name </li>
+        <li> Date </li> <li> Seats Total </li>
       </ul>
     </header>
   );
@@ -58,20 +57,18 @@ class App extends Component {
   // **************************
 
   handleRemoveTour = (id) => {
-    console.log(id);
-
     this.database.child(id).remove();
   };
 
-  addTour = (toursObject) => {
-    this.database.push().set({ name: toursObject });
+  addTour = (toursObjectName, toursObjectDate) => {
+    // console.log(toursObject);
+    this.database.push().set({ name: toursObjectName, date: toursObjectDate });
   };
 
   render() {
     return (
       <div className="tourlist">
         <Header title="Tour Inventory" totalTours={this.state.tours.length} />
-
         {this.state.tours.map((toursObject) => {
           return (
             <ul key={toursObject.id}>
@@ -81,8 +78,7 @@ class App extends Component {
                 </button>
                 {toursObject.name}
               </li>
-              <li> {toursObject.date} </li>
-              <li>{toursObject.seats}</li>
+              <li> {toursObject.date} </li> <li> {toursObject.seats} </li>
             </ul>
           );
         })}

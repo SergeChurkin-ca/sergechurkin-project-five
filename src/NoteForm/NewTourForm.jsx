@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import "./NoteForm.css";
+import "./NewTourForm.css";
 
-class NoteForm extends Component {
+class NewTourForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       newTourName: "",
       newTourDate: "",
+      newTourSeats: "",
     };
-    this.handleUserInput = this.handleUserInput.bind(this);
-    this.writeNote = this.writeNote.bind(this);
   }
 
   // getting the value from text input box
@@ -25,17 +24,24 @@ class NoteForm extends Component {
     });
   };
 
-  writeNote() {
+  handleTourSeats = (e) => {
+    this.setState({
+      newTourSeats: e.target.value,
+    });
+  };
+
+  writeNote = () => {
     // call a method that sets the noteContent for a note to
     // the value of the input
-    this.props.addTour(this.state.newTourName);
+    this.props.addTour(this.state.newTourName, this.state.newTourDate);
 
     // Set newTourName back t≤o an empty string.
     this.setState({
       newTourName: "",
       newTourDate: "",
+      newTourSeats: "",
     });
-  }
+  };
 
   render() {
     return (
@@ -53,6 +59,12 @@ class NoteForm extends Component {
           value={this.state.newTourDate}
           onChange={this.handleDateInput}
         />
+        <input
+          type="number"
+          className="dateInput"
+          value={this.state.newTourSeats}
+          onChange={this.handleTourSeats}
+        />
         <button className="noteButton" onClick={this.writeNote}>
           Add
         </button>
@@ -61,4 +73,4 @@ class NoteForm extends Component {
   }
 }
 
-export default NoteForm;
+export default NewTourForm;
