@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./firebase";
-import Noteform from "./NoteForm/NoteForm";
+import NoteForm from "./NoteForm/NoteForm";
 import "./App.css";
 
 const Header = (props) => {
@@ -11,58 +11,22 @@ const Header = (props) => {
       <ul>
         <li>Tour Name</li>
         <li>Date</li>
-        <li>Seats available</li>
+        <li>Seats Total</li>
       </ul>
     </header>
   );
 };
 
-class Counter extends Component {
-  state = {
-    score: 0,
-  };
-
-  incrementScore = () => {
-    this.setState((prevState) => ({
-      score: prevState.score + 1,
-    }));
-  };
-
-  decrementScore = () => {
-    this.setState((prevState) => ({
-      score: prevState.score - 1,
-    }));
-  };
-
-  render() {
-    return (
-      <div className="counter">
-        <button
-          className="counter-action decrement"
-          onClick={this.decrementScore}
-        >
-          -
-        </button>
-        <span className="counter-score"> {this.state.score} </span>
-        <button
-          className="counter-action increment"
-          onClick={this.incrementScore}
-        >
-          +
-        </button>
-      </div>
-    );
-  }
-}
-
 class App extends Component {
   constructor() {
     super();
+    this.database = firebase.database().ref();
     this.state = {
       tours: [],
     };
   }
 
+  // **************************
   componentDidMount() {
     const dbRef = firebase.database().ref();
 
@@ -91,17 +55,23 @@ class App extends Component {
       });
     });
   }
+  // **************************
 
   handleRemoveTour = (id) => {
     console.log(id);
-    const dbRef = firebase.database().ref();
-    dbRef.child(id).remove();
+
+    this.database.logchild(id).remove();
+  };
+
+  addTour = (toursObject) => {
+    this.database.push().set({ noteContent: toursObject });
   };
 
   render() {
     return (
       <div className="tourlist">
         <Header title="Tour Inventory" totalTours={this.state.tours.length} />
+
         {this.state.tours.map((toursObject) => {
           return (
             <ul key={toursObject.id}>
@@ -116,6 +86,7 @@ class App extends Component {
             </ul>
           );
         })}
+        <NoteForm addTour={this.addTour} />
       </div>
     );
   }

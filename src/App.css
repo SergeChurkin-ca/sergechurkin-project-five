@@ -107,7 +107,7 @@ ul {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 5px;
-    width: 95%;
+    /* width: 95%; */
 }
 
 li {

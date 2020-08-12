@@ -19,8 +19,11 @@ class NoteForm extends Component {
   }
 
   writeNote() {
-    // set new note content back to empty string
-    this.props.addNote(this.state.newNoteContent);
+    // call a method that sets the noteContent for a note to
+    // the value of the input
+    this.props.addTour(this.state.newNoteContent);
+
+    // Set newNoteContent back t≤o an empty string.
     this.setState({
       newNoteContent: "",
     });
@@ -37,7 +40,7 @@ class NoteForm extends Component {
           onChange={this.handleUserInput}
         />
         <button className="noteButton" onClick={this.writeNote}>
-          Add item
+          Add
         </button>
       </div>
     );
