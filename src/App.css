@@ -42,6 +42,11 @@ form {
     background-color: #8063FA;
 }
 
+input {
+    line-height: 1.5em;
+    margin: 0.5em;
+}
+
 button,
 input[type=submit] {
     outline: none;
@@ -92,7 +97,6 @@ input[type=submit] {
     font-weight: normal;
 }
 
-.stopwatch button:hover,
 input[type=submit]:hover {
     background: #fff;
     color: #44338D;
