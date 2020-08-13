@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./NewTourForm.css";
 
 // global variable - todays date
 const today = new Date().toISOString().split("T")[0];
@@ -42,7 +41,12 @@ class NewTourForm extends Component {
   };
 
   nullValidation = () => {
-    if (!this.state.newTourName == "") {
+    if (
+      !this.state.newTourName == "" &&
+      !this.state.newTourDate == "" &&
+      !this.state.newTourDuration == "" &&
+      !this.state.newTourSeats == ""
+    ) {
       this.writeNote();
     } else {
       alert("please check your inputs");

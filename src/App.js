@@ -32,6 +32,7 @@ class App extends Component {
     const dbRef = firebase.database().ref();
 
     dbRef.on("value", (snapshot) => {
+      // checking changes in db
       console.log(snapshot.val());
 
       const data = snapshot.val();
