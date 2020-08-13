@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import "./NewTourForm.css";
 
+// global variable - todays date
+const today = new Date().toISOString().split("T")[0];
+
 class NewTourForm extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       newTourName: "",
       newTourDate: "",
@@ -79,6 +83,8 @@ class NewTourForm extends Component {
           <div className="inputParamsWrapper">
             <input
               type="date"
+              // disabling past dates from global variable - today
+              min={today}
               className="dateInput"
               value={this.state.newTourDate}
               onChange={this.handleDateInput}
