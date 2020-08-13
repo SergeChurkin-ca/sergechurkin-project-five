@@ -30,10 +30,19 @@ class NewTourForm extends Component {
     });
   };
 
+  // check empty fields and fire next func to submit the form
   handleTourSeats = (e) => {
     this.setState({
       newTourSeats: e.target.value,
     });
+  };
+
+  nullValidation = () => {
+    if (!this.state.newTourName == "") {
+      this.writeNote();
+    } else {
+      alert("please check your inputs");
+    }
   };
 
   writeNote = () => {
@@ -58,38 +67,50 @@ class NewTourForm extends Component {
   render() {
     return (
       <div className="inputformWrapper">
-        <input
-          type="text"
-          className="noteInput"
-          placeholder="Add tour name"
-          value={this.state.newTourName}
-          onChange={this.handleUserInput}
-        />
-        <div className="inputParamsWrapper">
+        <form>
           <input
-            type="date"
-            className="dateInput"
-            value={this.state.newTourDate}
-            onChange={this.handleDateInput}
+            type="text"
+            className="noteInput"
+            placeholder="Add tour name"
+            value={this.state.newTourName}
+            onChange={this.handleUserInput}
+            required
           />
-          <input
-            type="datetime"
-            className="dateInput"
-            placeholder="hrs"
-            value={this.state.newTourDuration}
-            onChange={this.handleTourDuration}
-          />
-          <input
-            type="number"
-            className="dateInput"
-            placeholder="pax"
-            value={this.state.newTourSeats}
-            onChange={this.handleTourSeats}
-          />
-          <button className="noteButton" onClick={this.writeNote}>
-            Add
-          </button>
-        </div>
+          <div className="inputParamsWrapper">
+            <input
+              type="date"
+              className="dateInput"
+              value={this.state.newTourDate}
+              onChange={this.handleDateInput}
+              required
+            />
+            <input
+              type="number"
+              className="dateInput"
+              placeholder="hrs"
+              value={this.state.newTourDuration}
+              onChange={this.handleTourDuration}
+              required
+            />
+            <input
+              type="number"
+              className="dateInput"
+              placeholder="pax"
+              value={this.state.newTourSeats}
+              onChange={this.handleTourSeats}
+              required
+            />
+            <button
+              className="noteButton"
+              onClick={() => {
+                // if input is empty we check and than submit the form once all is set
+                this.nullValidation();
+              }}
+            >
+              Add
+            </button>
+          </div>
+        </form>
       </div>
     );
   }
