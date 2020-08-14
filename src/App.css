@@ -24,7 +24,7 @@ header li {
 header h1 {
     flex-grow: 1;
     font-size: 1.5em;
-    font-size: calc(15px + (30 - 15) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
     letter-spacing: 2px;
     font-weight: normal;
     text-align: center;
@@ -96,11 +96,6 @@ input[type="submit"] {
     margin-right: 0.8em;
 }
 
-.stats {
-    margin: 0 0 0 28px;
-    font-weight: normal;
-}
-
 input[type="submit"]:hover {
     background: #fff;
     color: #44338d;
@@ -112,22 +107,22 @@ input[type="submit"]:hover {
 
 ul {
     display: grid;
-    grid-template-columns: 10% 30% 20% 20% 20%;
+    grid-template-columns: 15% 35% 20% 20% 10%;
     grid-column-gap: 0px;
     grid-row-gap: 5px;
     width: 95%;
-    padding: 1em;
+    padding: 0.5em 0;
     margin: 0;
 }
 
 li,
 span {
-    font-size: calc(6px + (26 - 6) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(6px + (15 - 6) * ((100vw - 300px) / (1600 - 300)));
 }
 
 li {
     text-align: left;
-    padding: 1em 2em;
+    padding: 1em 0.2em;
     background-color: rgb(241, 239, 239);
     list-style: none;
 }

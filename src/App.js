@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import firebase from "./firebase";
-import NoteForm from "./NoteForm/NewTourForm.jsx";
+import NoteForm from "./NewTourForm.js";
 import "./App.css";
 
 const Header = (props) => {
@@ -11,17 +11,7 @@ const Header = (props) => {
       <ul>
         <li></li>
         <li> Tour Name </li>
-        <li>
-          Date
-          <button
-            className="noteButton"
-            onClick={() => {
-              this.sortDecending();
-            }}
-          >
-            sort
-          </button>
-        </li>
+        <li>Date</li>
         <li> Duration </li>
         <li> Seats Total </li>
       </ul>
@@ -44,7 +34,6 @@ class App extends Component {
 
     dbRef.on("value", (snapshot) => {
       // checking changes in db
-      console.log(snapshot.val());
 
       const data = snapshot.val();
 
@@ -61,8 +50,6 @@ class App extends Component {
         };
         newToursAarray.push(toursObject);
       }
-
-      console.log("there are updates in database", newToursAarray);
 
       this.setState({
         tours: newToursAarray,
@@ -94,6 +81,7 @@ class App extends Component {
     return (
       <div className="tourlist">
         <Header title="Tour Inventory" totalTours={this.state.tours.length} />
+
         {this.state.tours.map((toursObject) => {
           return (
             <ul className="inventoryItem" key={toursObject.id}>
