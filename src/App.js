@@ -9,8 +9,19 @@ const Header = (props) => {
       <h1> {props.title} </h1>
       <span className="stats"> Total tours: {props.totalTours} </span>
       <ul>
+        <li></li>
         <li> Tour Name </li>
-        <li> Date </li>
+        <li>
+          Date
+          <button
+            className="noteButton"
+            onClick={() => {
+              this.sortDecending();
+            }}
+          >
+            sort
+          </button>
+        </li>
         <li> Duration </li>
         <li> Seats Total </li>
       </ul>
@@ -90,8 +101,8 @@ class App extends Component {
                 <button onClick={() => this.handleRemoveTour(toursObject.id)}>
                   X
                 </button>
-                {toursObject.name}
               </li>
+              <li>{toursObject.name}</li>
               <li>{toursObject.date}</li>
               <li>{toursObject.duration} hrs</li>
               <li>{toursObject.seats}</li>

@@ -1,4 +1,4 @@
-@import url('setup.css');
+@import url("setup.css");
 body {
     background: #e8e7e7;
     font-family: arial;
@@ -10,20 +10,21 @@ body {
 
 header,
 header li {
-    color: #FFF;
+    color: #fff;
     padding: 5px 10px;
     text-align: center;
     display: block;
     align-items: center;
-    background-color: #8063FA;
-    border-bottom: solid 2px #D4CAFF;
+    background-color: #8063fa;
+    /* border-bottom: solid 2px #d4caff; */
     text-align: left;
-    margin: 1em;
+    margin: 1em 0 0;
 }
 
 header h1 {
     flex-grow: 1;
     font-size: 1.5em;
+    font-size: calc(15px + (30 - 15) * ((100vw - 300px) / (1600 - 300)));
     letter-spacing: 2px;
     font-weight: normal;
     text-align: center;
@@ -36,6 +37,10 @@ div .tourlist {
 
 
 /* ********* FORMS *************** */
+
+form {
+    font-size: calc(10px + (20 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
 
 .formWrapper {
     width: 70%;
@@ -60,7 +65,7 @@ div .tourlist {
 }
 
 button,
-input[type=submit] {
+input[type="submit"] {
     outline: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -96,9 +101,9 @@ input[type=submit] {
     font-weight: normal;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
     background: #fff;
-    color: #44338D;
+    color: #44338d;
     cursor: pointer;
 }
 
@@ -107,11 +112,17 @@ input[type=submit]:hover {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 10% 30% 20% 20% 20%;
     grid-column-gap: 0px;
     grid-row-gap: 5px;
     width: 95%;
     padding: 1em;
+    margin: 0;
+}
+
+li,
+span {
+    font-size: calc(6px + (26 - 6) * ((100vw - 300px) / (1600 - 300)));
 }
 
 li {
@@ -148,7 +159,6 @@ button:hover {
 
 .noteButton,
 .noteInput {
-    border: none;
     margin: 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -179,4 +189,29 @@ button:hover {
     background-color: #e4f1fe;
     color: #111;
     transition: 0.2s ease-in;
+}
+
+
+/* ************************************* 
+********** MEDIA QUERIES *******************
+/* ********************************** */
+
+@media (max-width: 300px) {
+    .dateInput,
+    .noteInput {
+        width: 90%;
+        margin: 0 1em auto;
+    }
+    formm,
+    ul {
+        padding: 0.2em;
+        margin: 0;
+    }
+}
+
+@media (max-width: 352px) {
+    .noteInput,
+    .noteButton {
+        border-radius: 5px;
+    }
 }
