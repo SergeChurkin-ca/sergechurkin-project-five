@@ -16,7 +16,6 @@ header li {
     display: block;
     align-items: center;
     background-color: #8063fa;
-    /* border-bottom: solid 2px #d4caff; */
     text-align: left;
     margin: 1em 0 0;
 }
@@ -148,9 +147,7 @@ button:hover {
 }
 
 
-/* ************************************* 
-**********INPUT SECTION *******************
-/* ********************************** */
+/* ********* INPUT SECTION ****************** */
 
 .noteButton,
 .noteInput {
@@ -187,9 +184,7 @@ button:hover {
 }
 
 
-/* ************************************* 
-********** MEDIA QUERIES *******************
-/* ********************************** */
+/* *********** MEDIA QUERIES ***************** */
 
 @media (max-width: 300px) {
     .dateInput,
